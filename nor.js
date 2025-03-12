@@ -1,16 +1,15 @@
 
 const canvas = document.getElementById("myCanvas");
-let ctx = null;
+let ctx = canvas ? canvas.getContext("2d") : null;
 
-if (canvas) {
-    ctx = canvas.getContext("2d");
-} else {
+if (!ctx) {
     console.error("Canvas not found! Make sure <canvas id='myCanvas'> exists in HTML.");
 }
 
 function draw2Decoder() {
 
-    // Clear canvas
+    
+    if (!ctx) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = "16px Arial";
     ctx.textAlign = "center";
@@ -88,6 +87,7 @@ function draw2Decoder() {
 function draw31Decoder() {
 
     // Clear canvas
+    if (!ctx) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = "16px Arial";
     ctx.textAlign = "center";
@@ -192,6 +192,7 @@ function checkAnswer(selectedButton) {
 function draw3Decoder() {
 
     // Clear canvas
+    if (!ctx) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = "16px Arial";
     ctx.textAlign = "center";
@@ -277,6 +278,7 @@ function draw3Decoder() {
 
 function draw2Decoder() {
     // Clear only the decoder area, not the whole canvas
+    if (!ctx) return;
     ctx.clearRect(0, 0, 500, 300); // Adjust if needed
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -319,6 +321,7 @@ function draw2Decoder() {
 
 
 function draw33Decoder() {
+    if (!ctx) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = "16px Arial";
     ctx.textAlign = "center";
@@ -366,6 +369,7 @@ function draw33Decoder() {
 
 
 function drawNandGate() {
+    if (!ctx) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = "16px Arial";
     ctx.textAlign = "center";
@@ -399,6 +403,7 @@ function questionType1() {
     //Find the output for 2 to 4 decoder
 
     // Clear only the decoder area, not the whole canvas
+    if (!ctx) return;
     ctx.clearRect(0, 0, 500, 300); // Adjust if needed
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -457,6 +462,7 @@ function questionType1() {
 function questionType2() {
 
     //Find the output for 3 to 8 decoder
+    if (!ctx) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = "16px Arial";
     ctx.textAlign = "center";
@@ -526,6 +532,7 @@ function questionType2() {
 }
 
 function questionType3() {
+    if (!ctx) return;
     ctx.clearRect(0, 0, 500, 300); // Clear only the relevant area if needed
 
     ctx.font = "16px Arial";
@@ -598,6 +605,7 @@ function questionType4() {
 
 
     // Clear Canvas
+    if (!ctx) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = "16px Arial";
     ctx.textAlign = "center";
@@ -729,6 +737,7 @@ function questionType4() {
 
 function justorgate() {
     // Clear Canvas
+    if (!ctx) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = "16px Arial";
     ctx.textAlign = "center";
@@ -828,6 +837,7 @@ function questionType5() {
 
 
     // Clear Canvas
+    if (!ctx) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = "16px Arial";
     ctx.textAlign = "center";
